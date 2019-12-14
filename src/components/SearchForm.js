@@ -51,12 +51,6 @@ export default ({ characterList, searchResults, setSearchResults }) => {
                             image={character.image}
                             character={character}
                         />
-
-                        // <div key={character.id}>
-                        //     <h3>{character.name}</h3>
-                        //     <p>{character.species}</p>
-                        //     <img src={character.image} alt={character.name} />
-                        // </div>
                     ))}
             </div>
         </section>

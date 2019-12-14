@@ -29,6 +29,8 @@ export default ({ image, character }) => {
             <Info>
                 <h3>{character.name}</h3>
                 <p>Species: {character.species}</p>
+                <p>Origin: {character.origin.name}</p>
+                <p>Location: {character.location.name}</p>
             </Info>
         </Card>
     );
