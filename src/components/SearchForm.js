@@ -3,6 +3,10 @@ import styled from "styled-components";
 
 import CharacterCard from "./CharacterCard";
 
+const Form = styled.form`
+    margin-left: 2rem;
+`;
+
 const Input = styled.input`
     box-sizing: border-box;
     padding: 10px;
@@ -31,7 +35,7 @@ export default ({ characterList, searchResults, setSearchResults }) => {
 
     return (
         <section className="search-form">
-            <form>
+            <Form>
                 <label htmlFor="search" />
                 <Input
                     id="search"
@@ -41,7 +45,7 @@ export default ({ characterList, searchResults, setSearchResults }) => {
                     value={searchTerm}
                     onChange={handleChange}
                 />
-            </form>
+            </Form>
 
             <div>
                 {searchResults !== [] &&

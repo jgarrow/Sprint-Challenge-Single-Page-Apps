@@ -11,6 +11,7 @@ const Nav = styled.nav`
     display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
+    margin-left: 2rem;
 `;
 
 const StyledLink = styled(Link)`

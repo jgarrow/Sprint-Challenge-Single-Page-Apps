@@ -28,7 +28,7 @@ export default function CharacterList({ apiUrl, setApiUrl }) {
                 setPageNum(currentPage);
             })
             .catch(err => alert("API error: ", err));
-    }, [apiUrl]);
+    }, [apiUrl, pageNum]);
 
     return (
         <section className="character-list">
