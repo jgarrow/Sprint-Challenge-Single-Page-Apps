@@ -1,4 +1,16 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+
+import CharacterCard from "./CharacterCard";
+
+const Input = styled.input`
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    font-size: 1rem;
+`;
 
 export default ({ characterList, searchResults, setSearchResults }) => {
     const [searchTerm, setSearchTerm] = useState("");
@@ -21,11 +33,11 @@ export default ({ characterList, searchResults, setSearchResults }) => {
         <section className="search-form">
             <form>
                 <label htmlFor="search" />
-                <input
+                <Input
                     id="search"
                     type="text"
                     name="textfield"
-                    placeholder="Search"
+                    placeholder="Search by Name"
                     value={searchTerm}
                     onChange={handleChange}
                 />
@@ -34,11 +46,17 @@ export default ({ characterList, searchResults, setSearchResults }) => {
             <div>
                 {searchResults !== [] &&
                     searchResults.map(character => (
-                        <div key={character.id}>
-                            <h3>{character.name}</h3>
-                            <p>{character.species}</p>
-                            <img src={character.image} alt={character.name} />
-                        </div>
+                        <CharacterCard
+                            key={character.id}
+                            image={character.image}
+                            character={character}
+                        />
+
+                        // <div key={character.id}>
+                        //     <h3>{character.name}</h3>
+                        //     <p>{character.species}</p>
+                        //     <img src={character.image} alt={character.name} />
+                        // </div>
                     ))}
             </div>
         </section>

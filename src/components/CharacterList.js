@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-// import CharacterCard from "./CharacterCard";
+import CharacterCard from "./CharacterCard";
 import SearchForm from "./SearchForm";
 
 export default function CharacterList() {
@@ -33,35 +33,15 @@ export default function CharacterList() {
                 />
             )}
             <div>
-                {/* show all characters if nothing has been searched */}
                 {characterList !== [] &&
                     searchResults === characterList &&
                     characterList.map(character => (
-                        <div key={character.id}>
-                            <h3>{character.name}</h3>
-                            <p>{character.species}</p>
-                            <img src={character.image} alt={character.name} />
-                        </div>
+                        <CharacterCard
+                            key={character.id}
+                            image={character.image}
+                            character={character}
+                        />
                     ))}
-
-                {/* {characterList !== [] &&
-                    searchResults !== characterList &&
-                    searchResults !== [] &&
-                    console.log(
-                        "Search results in CharacterList: ",
-                        searchResults
-                    )
-                searchResults.map(character => {
-
-                    return (
-                        <div key={character.id}>
-                            <h3>{character.name}</h3>
-                            <p>{character.species}</p> 
-                            <img src={character.image} alt={character.name} />
-                        </div>
-                    );
-                })
-                } */}
             </div>
         </section>
     );
