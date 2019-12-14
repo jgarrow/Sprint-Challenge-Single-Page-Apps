@@ -23,7 +23,7 @@ export default ({ characterList, searchResults, setSearchResults }) => {
 
         console.log("Search results: ", results);
         setSearchResults(results);
-    }, [searchTerm]);
+    }, [searchTerm, characterList, setSearchResults]);
 
     const handleChange = e => {
         setSearchTerm(e.target.value);
